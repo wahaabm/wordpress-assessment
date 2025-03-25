@@ -1,62 +1,73 @@
-<p align="center">
-  <a href="https://roots.io/bedrock/">
-    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://packagist.org/packages/roots/bedrock">
-    <img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/bedrock?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
-
-  <a href="https://packagist.org/packages/roots/wordpress">
-    <img alt="roots/wordpress Packagist Downloads" src="https://img.shields.io/packagist/dt/roots/wordpress?label=roots%2Fwordpress%20downloads&logo=roots&logoColor=white&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
-  
-  <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/roots/bedrock/master/composer.json&label=wordpress&logo=roots&logoColor=white&query=$.require[%22roots/wordpress%22]&colorB=2b3072&colorA=525ddc&style=flat-square">
-
-  <a href="https://github.com/roots/bedrock/actions/workflows/ci.yml">
-    <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/bedrock/ci.yml?branch=master&logo=github&label=CI&style=flat-square">
-  </a>
-
-  <a href="https://twitter.com/rootswp">
-    <img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square">
-  </a>
-</p>
-
-<p align="center">WordPress boilerplate with Composer, easier configuration, and an improved folder structure</p>
-
-<p align="center">
-  <a href="https://roots.io/bedrock/">Website</a> &nbsp;&nbsp; <a href="https://roots.io/bedrock/docs/installation/">Documentation</a> &nbsp;&nbsp; <a href="https://github.com/roots/bedrock/releases">Releases</a> &nbsp;&nbsp; <a href="https://discourse.roots.io/">Community</a>
-</p>
-
-## Sponsors
-
-Bedrock is an open source project and completely free to use. If you've benefited from our projects and would like to support our future endeavors, please consider [sponsoring Roots](https://github.com/sponsors/roots).
-
-<div align="center">
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://worksitesafety.ca/careers/"><img src="https://cdn.roots.io/app/uploads/worksite-safety.svg" alt="Worksite Safety" width="120" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" width="120" height="90"></a> <a href="https://bonsai.so/"><img src="https://cdn.roots.io/app/uploads/bonsai.svg" alt="Bonsai" width="120" height="90"></a> <a href="https://fusepress.co/sp/sign-up/"><img src="https://cdn.roots.io/app/uploads/fusepress.svg" alt="FusePress" width="120" height="90"></a>
-</div>
+# Statenweb Dogs Project
 
 ## Overview
+This project is a WordPress application built using Bedrock, localwp for wordpress development setup, Tailwind CSS, Jquery for styling and Advanced Custom Fields (ACF) for managing dog data.
 
-Bedrock is a WordPress boilerplate for developers that want to manage their projects with Git and Composer. Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology, including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+## Features
+I implemented the following features for the Statenweb Dogs project:
 
-- Better folder structure
-- Dependency management with [Composer](https://getcomposer.org)
-- Easy WordPress configuration with environment specific files
-- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-- Autoloader for mu-plugins (use regular plugins as mu-plugins)
-- Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
+- **Homepage (`front-page.php`)**: Displays dogs with current month (March) birthdays (e.g., Bailey and Lucy), including their names, images, birthdates, favorite food, toys, and allergies. Each dog’s name and image are clickable, linking to their individual pages.
+- **All Dogs Page (`page-all-dogs.php`)**: Lists all dogs, with the oldest dog (Rex) featured. Includes filters for breed and allergies, allowing users to sort the list. Each dog is clickable, linking to its individual page.
+- **Single Dog Pages (`single-dogs.php`)**: Provides detailed information for each dog (e.g., `/dog/charlie/`), including a “Back to All Dogs” button for easy navigation.
+- **Navigation and Footer**: Added a navigation bar (`header.php`) and a styled footer (`footer.php`) that appear consistently across all pages, with proper alignment and design.
+- **Custom Post Type (CPT)**: Registered a `dog` CPT in `functions.php` to manage dog data, with fields for name, owner name, birthdate, favorite food, toys, and allergies, using ACF.
+- **Data Import Script (`import-dogs.php`)**: Created a script to import 19 unique dogs into the database, ensuring no duplicates and proper data population.
+- **Styling with Tailwind CSS**: Used Tailwind CSS for responsive and modern styling, including grids, cards, and buttons.
+  
+## Screenshots
+### Home Page
+![home](https://github.com/user-attachments/assets/fcf9faf2-c29b-44da-bdb5-8e689502d65b)
 
-## Getting Started
+### All dogs sorted
+![all-dogs-sorted](https://github.com/user-attachments/assets/bfdeaee2-eb12-4dc3-9e15-ab15acb4d261)
 
-See the [Bedrock installation documentation](https://roots.io/bedrock/docs/installation/).
+### All dogs specific breed filter
+![all-dogs-specific-breed](https://github.com/user-attachments/assets/920fc41b-1359-4b8a-888e-e3d62ff7f599)
 
-## Stay Connected
+## All dogs with allergies filter
+![all-dogs-with-allergies-filter](https://github.com/user-attachments/assets/41e2ceab-64c5-4a1d-8517-ea13a2049dd4)
 
-- Join us on Discord by [sponsoring us on GitHub](https://github.com/sponsors/roots)
-- Participate on [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
+## Single dog
+![singe-dog](https://github.com/user-attachments/assets/ddd641b5-11ef-4a00-baf7-54481fbbd6f4)
+
+**Dog data in db**
+![dog-data-db](https://github.com/user-attachments/assets/e6e8bfaf-8362-47c2-8501-c1df816a095d)
+
+
+
+
+## Setup Instructions
+
+### Prerequisites
+- PHP 7.4 or higher
+- Composer (for WordPress dependencies)
+- Node.js and npm (for Tailwind CSS)
+- Localwp (for wordpress development setup)
+
+### Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/statenweb-dogs.git
+   cd statenweb-dogs
+2. **Install Composer Dependencies**:
+   ```bash
+   composer install
+   ```
+   This installs WordPress core, Bedrock dependencies, and plugins (e.g., Advanced Custom Fields).
+3. **Set Up Environment**:
+   ```bash
+   cp .env.example .env
+   ```
+   Edit it with your own credentials
+4. **Install Node Dependencies:**:
+   ```bash
+   npm install
+   ```
+   Edit it with your own credentials
+5. **Build Tailwind CSS**:
+   ```bash
+   npm run build
+   ```
+   This generates style.css in the theme folder. (web/app/themes/statenweb-dogs/).
+6. **Import dog data**:
+   Access http://your-site-url/import-dogs.php in the browser to import the 19 dogs into the dog custom post type.
